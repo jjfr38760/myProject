@@ -66,7 +66,7 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
   
   * Python3 and Pytest :
 ```    
-  yum install python3-pip
+  sudo yum install python3-pip
   pip3 install --user  pytest
 ``` 
   * Docker :  
