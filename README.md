@@ -59,20 +59,19 @@ Requirements
 Setup an host running RHEL 7.7 with following setup (execute commands as non root user) :
   
   * Python3 and Pytest :
-    
-		yum install python3-pip
-		pip3 install --user  pytest
- 
+```    
+  yum install python3-pip
+  pip3 install --user  pytest
+``` 
   * Docker up and running :  
 ```
-	pip3 install --user docker
- 	sudo gpasswd -a $USER docker
-	newgrp docker
-````  
- 
+  pip3 install --user docker
+  sudo gpasswd -a $USER docker
+  newgrp docker
+```
   * Ansible for Python3 :
-  ```
-    pip3 install --user ansible
+```
+  pip3 install --user ansible
 ```
 
 How to run 
