@@ -77,9 +77,9 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
 
 How to run 
 ==========
+(execute command as non root user)
 
 ansible-playbook tomcat_sample_setup.yml
-(execute command as non root user)
 
 
 Note1:
