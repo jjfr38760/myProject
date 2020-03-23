@@ -138,10 +138,10 @@ How to cleanup
   ======
   
   - It looks like there is intermittent issue while running Ansible playbook in the scenario of docker container and image to build from scratch 
-  - In the playbook final step of call to script test_url.py to check sample app is reachable, it will fail hitting exception reason "Presumably, the server closed the connection before sending a valid response"  
-  - Issue does not hurt as in this scenario it is just final double check not mandatory  
-  - At this final stage, sample application does hit successfully which can be cross-checked by running the Pytest script individually outside playbook  
-  - At this time, screening various forums on topic/issue it looks like a known bug in lib urllib3 with no clear workaround I could found  
+    * In the playbook final step of call to script test_url.py to check sample app is reachable, it will fail hitting exception reason "Presumably, the server closed the connection before sending a valid response"  
+    * Issue does not hurt as in this scenario it is just final double check not mandatory  
+    * At this final stage, sample application does hit successfully which can be cross-checked by running the Pytest script individually outside playbook  
+    * At this time, screening various forums on topic/issue it looks like a known bug in lib urllib3 with no clear workaround I could found  
       => using different methods to connect and trigger HTTP GET did not fix it  
       => adding sleep time after Connect / GET calls did not fix it  
       => plan to raise an hand in the community to share on that issue  
