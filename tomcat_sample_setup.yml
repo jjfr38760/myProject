@@ -1,14 +1,12 @@
 - hosts: localhost
   tasks:
-   - name: Setup Tomcat with sample app deployed
+   - name: setup Tomcat with sample app deployed
      block:
        - debug:
-           msg: 'Is sample app reachable ?'
+           msg: 'Is sample app reachable'
        - name: Check sample app is not reachable
-         script: test_url.py --url "http://localhost:8080/sample" --status not_found
-         args:
-           executable: pytest 
-         register: cmd_result
+         command: 
+          cmd: pytest test_url.py --tb=no --url "http://localhost:8080/sample" --status "not_found"
        - debug:
            msg: 'Sample app is not reachable: initiating setup...'
        - name: Build Tomcat image with sample
@@ -28,10 +26,8 @@
        - debug:
            msg: 'Setup is complete'
      always:
-       - name: Check sample app is reachable 
-         script: test_url.py --url "http://localhost:8080/sample" --status found
-         args:
-           executable: pytest
-         register: cmd_result
+       - name: Check sample app is reachable
+         command:
+          cmd: pytest test_url.py --tb=no --url "http://localhost:8080/sample" --status "found"
        - debug:
            msg: 'Sample app is reachable'
