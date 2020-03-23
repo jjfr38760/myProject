@@ -9,6 +9,7 @@ Layout
 	conftest.py
 	Dockerfile
 	tomcat_sample_setup.yml
+	hosts
 	
 - Pytest script
 ```
@@ -52,6 +53,12 @@ conftest.py
         => builds docker image using Dockerfile file named samplewebapp that basically enables tomcat and sample web app to deploy  
         => runs docker container named samplewebapp to run built image samplewebapp and map TCP port 8080 in the container to port 8080 on the docker host  
   * Check whether sample web application deployed in Tomcat is accessible at "http://localhost:8080/sample" calling Pytest script test_url.py
+
+
+- hosts 
+
+  Ansible inventory file required to operate playbook on localhost  
+  
 
 
 Requirements
