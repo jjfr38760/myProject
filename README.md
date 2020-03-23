@@ -95,13 +95,13 @@ Example :
  git config --global user.email "<your email>"
  git config --global user.name "<your name>"
  git clone https://github.com/jjfr38760/myProject.git
- cd ~\myProject
+ cd ~/myProject
 ```
 
 
 (execute commands as non root user)
 ```
-ansible-playbook tomcat_sample_setup.yml
+ansible-playbook -i hosts tomcat_sample_setup.yml
 ```
 
 Note1:
