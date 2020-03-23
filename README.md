@@ -145,6 +145,6 @@ How to cleanup
     * At this final stage, sample application does hit successfully which can be cross-checked by running the Pytest script individually outside playbook  
     * At this time, screening various forums on topic/issue it looks like a known bug in lib urllib3 with no clear workaround I could found  
       => using different methods to connect and trigger HTTP GET did not fix it  
-      => both using urllib or urllib3 duplicates same issue, see other flavor in file test_url_lib3.py)
+      => both using urllib or urllib3 duplicates same issue, see other flavor in file test_url_lib3.py)  
       => adding sleep time after Connect / GET calls did not fix it  
       => plan to raise an hand in the community to share on that issue  
