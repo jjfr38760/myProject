@@ -68,9 +68,9 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
   yum install python3-pip
   pip3 install --user  pytest
 ``` 
-  * Docker up and running :  
+  * Docker :  
 ```
-  pip3 install --user docker
+  Follow setup at https://docs.docker.com/ee/docker-ee/rhel/
   sudo gpasswd -a $USER docker
   newgrp docker
 ```
@@ -83,16 +83,17 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
 How to run 
 ==========
 
-from you host, clone or download git repository 
+From you host, clone or download git repository https://github.com/jjfr38760/myProject.git
 
 Example:
+```
  mkdir -p ~/myProject ; cd ~/myProject
  sudo yum install git
  git init
  git config --global user.email "<your email>"
  git config --global user.name "<your name>"
- git clone 
-
+ git clone https://github.com/jjfr38760/myProject.git
+```
 
 
 (execute commands as non root user)
