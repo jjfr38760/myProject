@@ -5,9 +5,9 @@
        - debug:
            msg: 'Is sample app reachable ?'
        - name: Check sample app is not reachable
-         script: test_url.py --tb=no --url "http://localhost:8080/sample" --status "not_found"
+         script: test_url.py --url "http://localhost:8080/sample" --status not_found
          args:
-           executable: py.test 
+           executable: pytest 
          register: cmd_result
        - debug:
            msg: 'Sample app is not reachable: initiating setup...'
@@ -29,9 +29,9 @@
            msg: 'Setup is complete'
      always:
        - name: Check sample app is reachable 
-         script: test_url.py --tb=no --url "http://localhost:8080/sample" --status "found"
+         script: test_url.py --url "http://localhost:8080/sample" --status found
          args:
-           executable: py.test
+           executable: pytest
          register: cmd_result
        - debug:
            msg: 'Sample app is reachable'
