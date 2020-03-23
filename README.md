@@ -58,7 +58,7 @@ Requirements
 
 Setup an host running RHEL 7.7 with following setup (execute commands as non root user) :
   
-  Example : 
+  Example 
   ```
   mkdir -p ~/myProject ; cd ~/myProject
   ```
@@ -85,14 +85,15 @@ How to run
 
 From you host, clone or download git repository https://github.com/jjfr38760/myProject.git
 
-Example:
+Example :
 ```
- mkdir -p ~/myProject ; cd ~/myProject
+ cd ~
  sudo yum install git
  git init
  git config --global user.email "<your email>"
  git config --global user.name "<your name>"
  git clone https://github.com/jjfr38760/myProject.git
+ cd ~\myProject
 ```
 
 
