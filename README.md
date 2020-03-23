@@ -72,6 +72,7 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
   * Docker :  
 ```
   Follow setup at https://docs.docker.com/ee/docker-ee/rhel/
+  pip3 install --user docker
   sudo gpasswd -a $USER docker
   newgrp docker
 ```
