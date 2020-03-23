@@ -1,0 +1,37 @@
+- hosts: localhost
+  tasks:
+   - name: Setup Tomcat with sample app deployed
+     block:
+       - debug:
+           msg: 'Is sample app reachable ?'
+       - name: Check sample app is not reachable
+         script: test_url.py --tb=no --url "http://localhost:8080/sample" --status "not_found"
+         args:
+           executable: py.test 
+         register: cmd_result
+       - debug:
+           msg: 'Sample app is not reachable: initiating setup...'
+       - name: Build Tomcat image with sample
+         docker_image:
+           build:
+            path: .
+            pull: yes
+           name: samplewebapp
+           source: build
+           state: present
+       - name: Deploy into container
+         docker_container:
+           name: samplewebapp
+           image: samplewebapp
+           published_ports: 8080:8080
+           state: started
+       - debug:
+           msg: 'Setup is complete'
+     always:
+       - name: Check sample app is reachable 
+         script: test_url.py --tb=no --url "http://localhost:8080/sample" --status "found"
+         args:
+           executable: py.test
+         register: cmd_result
+       - debug:
+           msg: 'Sample app is reachable'
