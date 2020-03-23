@@ -19,7 +19,7 @@ conftest.py
   Script test_url.py checks whether accessing an URL is successfull or not through an HTTP GET  
   File conftest.py defines fixtures for the parameters of the test_url.py script
 
-  Script can be executed individually as a separate command for any URL to check
+  Script can be executed individually as a separate command for any URL to check  
     It accepts 2 arguments --url and --status  
     If --url is not specified it defaults to "http://localhost:8080/sample"  
     If --status is not specified it defaults to "found"  
