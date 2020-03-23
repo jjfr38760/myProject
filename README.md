@@ -1,6 +1,6 @@
 # myProject
 
-This project is about creating a docker container on RHEL 7.7 to setup and run Tomcat web sever with a sample web application deployed listening on 8080
+This project is about creating a docker container on RHEL 7.7 to setup and run Tomcat web sever with a sample web application deployed listening on port 8080
 
 Layout
 ======
