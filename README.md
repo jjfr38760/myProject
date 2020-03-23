@@ -36,7 +36,7 @@ conftest.py
 - Dockerfile
 
   This file contains the set of docker instructions :
-    * To build an image of Tomcat 9.0 (pick up version 9.0)
+    * To build an image of Tomcat (pick up version 9.0)
     * To add a sample web application (pick up latest version of "sample" war file) into the web server directory of Tomcat so it is automatically deployed at runtime
     * To expose web server to listen to port 8080
     * To run Tomcat web server
