@@ -58,6 +58,11 @@ Requirements
 
 Setup an host running RHEL 7.7 with following setup (execute commands as non root user) :
   
+  Example : 
+  ```
+  mkdir -p ~/myProject ; cd ~/myProject
+  ```
+  
   * Python3 and Pytest :
 ```    
   yum install python3-pip
@@ -74,8 +79,22 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
   pip3 install --user ansible
 ```
 
+
 How to run 
 ==========
+
+from you host, clone or download git repository 
+
+Example:
+ mkdir -p ~/myProject ; cd ~/myProject
+ sudo yum install git
+ git init
+ git config --global user.email "<your email>"
+ git config --global user.name "<your name>"
+ git clone 
+
+
+
 (execute commands as non root user)
 ```
 ansible-playbook tomcat_sample_setup.yml
@@ -102,12 +121,12 @@ How to cleanup
   
   (execute commands as non root user)
   ```
-  docker container ls
-  docker container stop <container_id>
-  docker container rm <container_id>
+  docker container ps
+  docker container stop samplewebapp
+  docker container rm samplewebapp
 
   docker image ls
-  docker image rm <image_id_1> <image_id_2> 
+  docker image rm samplewebapp tomcat:9.0
  ``` 
   
   
