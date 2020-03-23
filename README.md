@@ -137,7 +137,7 @@ How to cleanup
   Issues
   ======
   
-  - It looks like there is intermittent issue while running Ansible playbook in the scenario of docker container and image to build  
+  - It looks like there is intermittent issue while running Ansible playbook in the scenario of docker container and image to build from scratch 
   - In the playbook final step of call to script test_url.py to check sample app is reachable, it will fail hitting exception reason "Presumably, the server closed the connection before sending a valid response"  
   - Issue does not hurt as in this scenario it is just final double check not mandatory  
   - At this final stage, sample application does hit successfully which can be cross-checked by running the Pytest script individually outside playbook  
