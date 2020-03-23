@@ -28,8 +28,8 @@ conftest.py
   
 	py.test test_url.py --tb=no --url <URL_to_check> --status found|not_found
 
-  Example:
-    py.test test_url.py --tb=no --url "http://localhost:8080/sample" --status "found"
+  Example:  
+    py.test test_url.py --tb=no --url "http://localhost:8080/sample" --status "found"  
     py.test test_url.py --tb=no --url "http://localhost:8080/sample" --status "not_found"
 
 
