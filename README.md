@@ -52,8 +52,8 @@ Layout
   * Check whether sample web application deployed in Tomcat is accessible at "http://localhost:8080/sample" calling Pytest script test_url.py
 
 
-Requirements :
-==============
+Requirements
+============
 
 Setup an host running RHEL 7.7 with following setup (execute commands as non root user) :
   
@@ -75,10 +75,12 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
     pip3 install --user ansible
 
 
-How to run : (execute command as non root user)
-============
+How to run 
+==========
 
 ansible-playbook tomcat_sample_setup.yml
+(execute command as non root user)
+
 
 Note1:
 
@@ -96,8 +98,10 @@ Note2 :
 
 
 
-How to cleanup : (execute commands as non root user)
-================
+How to cleanup
+==============
+  
+  (execute commands as non root user)
   
   docker container ls
   docker container stop <container_id>
@@ -108,8 +112,10 @@ How to cleanup : (execute commands as non root user)
   
   
   
-  Issues :
-  ========
+  
+  
+  Issues
+  ======
   
   - It looks like there is intermittent issue while running Ansible playbook in the scenario of docker container and image to build
   - In the playbook final step of call to script test_url.py to check sample app is reachable, it will fail hitting exception reason "Presumably, the server closed the connection before sending a valid response"
