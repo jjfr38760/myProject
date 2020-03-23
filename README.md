@@ -5,16 +5,16 @@ This project is about creating a docker container on RHEL 7.7 to setup and run T
 Layout
 ======
 
-  test_url.py
-  conftest.py
-  Dockerfile
-  tomcat_sample_setup.yml
-
-
+	test_url.py
+	conftest.py
+	Dockerfile
+	tomcat_sample_setup.yml
+	
 - Pytest script
-
-  test_url.py
-  conftest.py
+```
+test_url.py
+conftest.py
+```
 
   Script test_url.py checks whether accessing an URL is successfull or not through an HTTP GET
   File conftest.py defines fixtures for the parameters of the test_url.py script
@@ -25,7 +25,8 @@ Layout
     If --status is not specified it defaults to "found"
     If --status is not in [found, not_found] the test will fail
 
-  py.test test_url.py --tb=no --url <URL_to_check> --status found|not_found
+  
+	py.test test_url.py --tb=no --url <URL_to_check> --status found|not_found
 
   Example:
     py.test test_url.py --tb=no --url "http://localhost:8080/sample" --status "found"
@@ -58,29 +59,28 @@ Requirements
 Setup an host running RHEL 7.7 with following setup (execute commands as non root user) :
   
   * Python3 and Pytest :
-  
-    yum install python3-pip
-    pip3 install --user  pytest
-
-  
-  * Docker up and running :
-  
-    pip3 install --user docker
-    sudo gpasswd -a $USER docker
-    newgrp docker
-  
-  
+    
+		yum install python3-pip
+		pip3 install --user  pytest
+ 
+  * Docker up and running :  
+```
+	pip3 install --user docker
+ 	sudo gpasswd -a $USER docker
+	newgrp docker
+````  
+ 
   * Ansible for Python3 :
-  
+  ```
     pip3 install --user ansible
-
+```
 
 How to run 
 ==========
-(execute command as non root user)
-
+(execute commands as non root user)
+```
 ansible-playbook tomcat_sample_setup.yml
-
+```
 
 Note1:
 
@@ -102,14 +102,14 @@ How to cleanup
 ==============
   
   (execute commands as non root user)
-  
+  ```
   docker container ls
   docker container stop <container_id>
   docker container rm <container_id>
 
   docker image ls
   docker image rm <image_id_1> <image_id_2> 
-  
+ ``` 
   
   
   
@@ -125,6 +125,3 @@ How to cleanup
       => using different methods to connect and trigger HTTP GET did not fix it
       => adding sleep time after Connect / GET calls did not fix it
       => plan to raise an hand in the community to share on that issue
-      
-      
-  
