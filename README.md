@@ -78,7 +78,7 @@ Setup an host running RHEL 7.7 with following setup (execute commands as non roo
 ``` 
   * Docker :  
 ```
-  Follow setup at https://docs.docker.com/ee/docker-ee/rhel/
+  Follow setup at https://docs.docker.com/ee/docker-ee/rhel/ or https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html-single/getting_started_with_containers/index#getting_docker_in_rhel_7
   pip3 install --user docker
   sudo gpasswd -a $USER docker
   newgrp docker
